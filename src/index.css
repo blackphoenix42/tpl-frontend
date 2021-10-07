@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+}
+
+@font-face {
+  font-family: Inter;
+  src: local("Inter"), url(./fonts/Inter.ttf) format("truetype");
+}

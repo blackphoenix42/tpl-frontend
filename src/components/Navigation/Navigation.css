@@ -1,0 +1,56 @@
+.nav {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 7px solid #ffffff;
+  height: 120px;
+  width: 100%;
+  overflow: auto;
+  background: black;
+}
+
+.logo {
+  margin-left: 30px;
+  margin-bottom: 25px;
+}
+
+.menuList {
+  position: inherit;
+  width: 792px;
+  height: 54px;
+  left: 300px;
+  top: 21px;
+}
+.li {
+  display: inline;
+  margin: 20px;
+  width: 310px;
+  height: 54px;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 106%;
+  list-style: none;
+
+  letter-spacing: -0.2px;
+
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#selected {
+  color: #429ffd;
+  text-decoration: underline;
+}
+
+.profile {
+  float: right;
+  margin-right: 30px;
+}

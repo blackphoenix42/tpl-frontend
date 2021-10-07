@@ -1,0 +1,28 @@
+.homeComp {
+  display: flex;
+  flex-direction: row;
+  margin-top: 125px;
+  padding-left: 50px;
+  justify-content: space-between;
+}
+.title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 106%;
+  letter-spacing: -0.2px;
+  color: #ffffff;
+}
+.tez {
+  color: #429ffd;
+}
+.person {
+  z-index: -1;
+}
+.joystick {
+  width: 475px;
+  height: 475px;
+  padding-top: 100px;
+  padding-left: 200px;
+}

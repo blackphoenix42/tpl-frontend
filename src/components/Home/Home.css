@@ -1,28 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap");
 .homeComp {
   display: flex;
   flex-direction: row;
-  margin-top: 125px;
-  padding-left: 50px;
+  background-color: #1e2235;
   justify-content: space-between;
+  height: 100vh;
+}
+.tplContainer {
+  /* border: 2px solid red; */
+  width: 50%;
 }
 .title {
-  font-family: Inter;
+  font-family: Gladerglynn Titling;
   font-style: normal;
-  font-weight: 800;
-  font-size: 100px;
-  line-height: 106%;
-  letter-spacing: -0.2px;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 5rem;
   color: #ffffff;
+  text-align: center;
 }
 .tez {
   color: #429ffd;
 }
-.person {
-  z-index: -1;
+
+.tplAbout {
+  color: white;
+  text-align: center;
+  font-size: 25px;
 }
+.person {
+  width: 40%;
+}
+
 .joystick {
-  width: 475px;
-  height: 475px;
-  padding-top: 100px;
-  padding-left: 200px;
+  width: 400px;
+  margin-top: 300px;
+  margin-left: 100px;
 }

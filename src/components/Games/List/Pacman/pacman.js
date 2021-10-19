@@ -24,8 +24,8 @@ Pacman.Ghost = function (game, map, colour) {
     function getNewCoord(dir, current) {
 
         var speed = isVunerable() ? 1 : isHidden() ? 4 : 2,
-            xSpeed = (dir === LEFT && -speed || dir === RIGHT && speed || 0),
-            ySpeed = (dir === DOWN && speed || dir === UP && -speed || 0);
+            xSpeed = ((dir === LEFT && -speed) || (dir === RIGHT && speed) || 0),
+            ySpeed = ((dir === DOWN && speed) || (dir === UP && -speed) || 0);
 
         return {
             "x": addBounded(current.x, xSpeed),
@@ -78,9 +78,9 @@ Pacman.Ghost = function (game, map, colour) {
     };
 
     function oppositeDirection(dir) {
-        return dir === LEFT && RIGHT ||
-            dir === RIGHT && LEFT ||
-            dir === UP && DOWN || UP;
+        return (dir === LEFT && RIGHT) ||
+            (dir === RIGHT && LEFT) ||
+            (dir === UP && DOWN) || UP;
     };
 
     function makeEatable() {
@@ -335,8 +335,8 @@ Pacman.User = function (game, map) {
 
     function getNewCoord(dir, current) {
         return {
-            "x": current.x + (dir === LEFT && -2 || dir === RIGHT && 2 || 0),
-            "y": current.y + (dir === DOWN && 2 || dir === UP && -2 || 0)
+            "x": current.x + ((dir === LEFT && -2) || (dir === RIGHT && 2) || 0),
+            "y": current.y + ((dir === DOWN && 2) || (dir === UP && -2) || 0)
         };
     };
 
@@ -422,7 +422,7 @@ Pacman.User = function (game, map) {
         block = map.block(nextWhole);
 
         if ((isMidSquare(position.y) || isMidSquare(position.x)) &&
-            block === Pacman.BISCUIT || block === Pacman.PILL) {
+            (block === Pacman.BISCUIT || block === Pacman.PILL)) {
 
             map.setBlock(nextWhole, Pacman.EMPTY);
             addScore((block === Pacman.BISCUIT) ? 10 : 50);
@@ -449,7 +449,7 @@ Pacman.User = function (game, map) {
     };
 
     function calcAngle(dir, pos) {
-        if (dir == RIGHT && (pos.x % 10 < 5)) {
+        if (dir === RIGHT && (pos.x % 10 < 5)) {
             return { "start": 0.25, "end": 1.75, "direction": false };
         } else if (dir === DOWN && (pos.y % 10 < 5)) {
             return { "start": 0.75, "end": 2.25, "direction": false };

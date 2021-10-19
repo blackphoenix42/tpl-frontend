@@ -1,34 +1,24 @@
 import './App.css';
-import Navigation from './components/Navigation/Navigation';
-import Home from './components/Home/Home';
-import Marketplace from './components/Marketplace/Marketplace';
-import Games from './components/Games/Games'
-import Footer from './components/Footer/Footer'
+import Main from './components/Main/Main';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import pacmanGame from './components/Games/List/Pacman/pacmanGame';
+import pacmanAbout from './components/Games/List/Pacman/pacmanAbout';
+
+
 function App() {
   return (
-    <div className="App">
-
-      <div className="navigation">
-        <Navigation />
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path='/' component={Main} />
+          <Route exact path='/games/about/pacman' component={pacmanAbout} />
+          <Route exact path='/games/play/pacman' component={pacmanGame} />
+          
+          
+          <Route render={() => <h1>404 page not found</h1>} />
+        </Switch>
       </div>
-
-      <div className="home">
-        <Home />
-      </div>
-
-      <div className="Games">
-        <Games />
-      </div>
-
-      <div className="marketplace">
-        <Marketplace />
-      </div>
-
-      <div className="footer">
-        <Footer />
-      </div>
-
-    </div>
+    </Router>
   );
 }
 

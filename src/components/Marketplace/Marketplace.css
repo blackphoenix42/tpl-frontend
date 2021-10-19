@@ -1,50 +1,53 @@
 .marketplaceComp {
-  border-top: 2px solid white;
-  margin-top: 30px;
+  padding-top: 1px;
+  background-color: #1e2235;
+  height: 90vh;
 }
 
 #marketwelcome {
-  font-size: 100px;
+  font-size: 50px;
 }
 .marketabout {
   font-family: Inter;
   font-style: normal;
   font-weight: 800;
-  font-size: 44px;
-  line-height: 106%;
-  letter-spacing: -0.2px;
+  font-size: 25px;
   color: #ffffff;
   text-align: center;
 }
 
-.NFT {
-  margin: 50px;
-}
-
-.gallery {
-  margin: 15px;
-  border: 5px solid #ccc;
-  border-radius: 15px;
-  float: left;
-  width: 300px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-}
-
-.gallery:hover {
-  border: 5px solid red;
-}
-
-.gallery img {
+.marketIpfs {
+  margin: 10px 10px 0px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 100%;
-  height: auto;
+}
+.marketIpfs img {
+  border-radius: 4px;
+  padding: 5px;
+  width: 300px;
 }
 
-.desc {
-  padding: 15px;
-  text-align: center;
+.marketIpfs img:hover {
+  /* box-shadow: 0 0 2px 1px rgba(187, 16, 16, 0.507); */
+  opacity: 0.8;
+}
+
+.marketplaceComp button {
+  background-color: #008cba;
+  border: none;
+  outline: 0;
   color: white;
-  font-family: Inter;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px;
+  cursor: pointer;
+  float: right;
+  margin-top: 10px;
+  margin-right: 48px;
+}
+
+.marketplaceComp button:hover {
+  opacity: 0.8;
 }

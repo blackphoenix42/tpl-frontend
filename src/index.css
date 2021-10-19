@@ -1,11 +1,36 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 @font-face {
   font-family: Inter;
-  src: local("Inter"), url(./fonts/Inter.ttf) format("truetype");
+  src: local("Inter"), url(./assets/fonts/Inter.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Gladerglynn Titling;
+  src: local("Gladerglynn Titling"),
+    url(./assets/fonts/galderglynn-titling.ttf) format("truetype");
 }

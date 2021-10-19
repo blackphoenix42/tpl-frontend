@@ -1,0 +1,11 @@
+.modalButton {
+  padding: 0.7rem 1.8rem;
+  background-color: inherit;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.svgProfile {
+  width: 45px;
+}

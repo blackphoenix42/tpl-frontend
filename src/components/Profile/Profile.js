@@ -1,13 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Modal from './Modal'
+import Temple from '../TempleWallet/Temple'
 import './Profile.css'
 
-const Profile = () => {
+const Profile = ({ children }) => {
+    const [showModal, setShowModal] = useState(false);
     return (
-        <div>
+        <div className="wrapper">
+            <button
+                type="button"
+                className="modalButton"
+                onClick={() => setShowModal(true)}
+            >
+                {
+                    !localStorage.getItem('isLoggedIn') &&
+                    <img src="/img/extras/profile.svg" alt="Profile" className="svgProfile" ></img>
+                }
+                {
+                    localStorage.getItem('isLoggedIn') &&
+                    <img src="/img/extras/profile_connected.svg" alt="Profile" className="svgProfile" ></img>
+                }
+            </button>
 
+            {showModal && (
+                <Modal onCloseRequest={() => setShowModal(false)}><Temple /></Modal>
+            )}
         </div>
     )
 }
-import './Profile.css'
 
 export default Profile

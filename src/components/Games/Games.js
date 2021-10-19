@@ -1,12 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Games.css'
-let pacman = require('./List/Pacman/index.html')
 
 const Games = () => {
     return (
-        <div className="GamesComp">
+        <div className="GamesComp" >
             <p id="tagline">PLAY AND WIN!!</p>
-            <div dangerouslySetInnerHTML={{ __html: pacman }} id="game1"></div>
+
+            <div className="gameGallery">
+                <Link to="/games/about/pacman">
+                    <img src="/img/games/pacman.jpg" alt="" width="50%" />
+                </Link>
+            </div>
         </div>
 
     )

@@ -3,41 +3,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 7px solid #ffffff;
-  height: 120px;
+  border-bottom: 3px solid #d15116;
+  height: 80px;
   width: 100%;
-  overflow: auto;
-  background: black;
+  background-color: #171c28;
 }
 
-.logo {
-  margin-left: 30px;
-  margin-bottom: 25px;
+.logo img {
+  margin: 15px 0px 20px 20px;
+  width: 70px;
 }
 
-.menuList {
-  position: inherit;
-  width: 792px;
-  height: 54px;
-  left: 300px;
-  top: 21px;
-}
 .li {
   display: inline;
-  margin: 20px;
-  width: 310px;
-  height: 54px;
-
+  padding: 20px;
   font-family: Inter;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 42px;
-  line-height: 106%;
+  font-size: 20px;
   list-style: none;
-
-  letter-spacing: -0.2px;
-
   color: #ffffff;
+}
+
+.li:hover {
+  color: darkgray;
 }
 
 a {
@@ -46,11 +33,6 @@ a {
 }
 
 #selected {
-  color: #429ffd;
+  color: #275efe;
   text-decoration: underline;
-}
-
-.profile {
-  float: right;
-  margin-right: 30px;
 }

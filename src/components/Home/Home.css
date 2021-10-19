@@ -15,12 +15,13 @@
   font-style: normal;
   font-weight: 700;
   font-size: 80px;
-  line-height: 5rem;
+  line-height: 6rem;
   color: #ffffff;
   text-align: center;
 }
 .tez {
   color: #429ffd;
+  font-size: 150%;
 }
 
 .tplAbout {
@@ -36,4 +37,15 @@
   width: 400px;
   margin-top: 300px;
   margin-left: 100px;
+
+
+}
+
+.tplAbout ul
+{
+  display:flex;  
+  list-style:none;
+  color: #a1f703d8;
+  font-weight: 700;
+  font-size: 26px;
 }

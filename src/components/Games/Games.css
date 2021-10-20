@@ -69,3 +69,28 @@
   border: 2px solid red;
   background-color: #008cba;
 }
+
+.visible {
+  opacity: 1;
+}
+.notVisible {
+  opacity: 0;
+}
+
+.findPlayer {
+  text-align: center;
+  font-size: 25px;
+}
+.bold {
+  font-weight: 800;
+}
+.loading {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 800;
+}
+.winner {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 800;
+}

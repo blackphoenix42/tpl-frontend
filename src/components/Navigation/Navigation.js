@@ -42,18 +42,7 @@ const Navigation = () => {
             </div>
 
             <div className="profile">
-                <Profile buttonLabel="Open text modal">
-                    <h2>Lorem ipsum dolor sit amet</h2>
-                    <p>
-                        Nullam tincidunt, nisl eget vestibulum rhoncus, elit nisi faucibus
-                        quam, sollicitudin posuere massa lacus cursus ligula. Quisque vel
-                        turpis a quam posuere lobortis.
-                    </p>
-                    <p>
-                        Aenean risus nunc, pretium eu massa tincidunt, dignissim tincidunt
-                        arcu. Integer et mauris vestibulum, pharetra eros nec, feugiat orci.
-                    </p>
-                </Profile>
+                <Profile />
             </div>
 
         </div >

@@ -3,7 +3,7 @@ import Modal from './Modal'
 import Temple from '../TempleWallet/Temple'
 import './Profile.css'
 
-const Profile = ({ children }) => {
+const Profile = () => {
     const [showModal, setShowModal] = useState(false);
     return (
         <div className="wrapper">

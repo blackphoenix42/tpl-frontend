@@ -1,6 +1,61 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import api from '../../../../api/api'
 
 const PacmanGame = () => {
+    let history = useHistory()
+    const userAddress = localStorage.getItem('userAddress')
+    const [gameId, setGameId] = useState(0)
+    const [isPlayerFound, setIsPlayerFound] = useState(false)
+    const [secondPlayerAddress, setSecondPlayerAddress] = useState('')
+    const [userIsGameEnded, setUserIsGameEnded] = useState(false)
+    const [isSecondGameEnded, setIsSecondGameEnded] = useState(false)
+    const [winner, setWinner] = useState('')
+
+    const findPlayer = async () => {
+        await api.get(`/player-game=pacman&player=${userAddress}`)
+            .then((res) => {
+                setGameId(res.data.gameid)
+                // console.log(gameId)
+                const address = res.data.player1 === userAddress ? res.data.player2 : res.data.player1
+                setSecondPlayerAddress(address)
+                setIsPlayerFound(true)
+            }).catch(err => {
+                console.log(err)
+            })
+    }
+
+    const userGameEnd = async (score) => {
+        await api.post('updatescore', {
+            "game": "pacman",
+            "gameid": localStorage.getItem('gameid'),
+            "player": userAddress,
+            "p_score": score
+        }).then(res => {
+            console.log(res)
+            setUserIsGameEnded(true)
+            secondGameEnd()
+        }).catch(err => {
+            console.log(err)
+        })
+    }
+
+    const secondGameEnd = async () => {
+        console.log("hi")
+        await api.get(`getresult-game=pacman&gameid=${localStorage.getItem('gameid')}`)
+            .then(res => {
+                console.log(res)
+                setWinner(res.data.result)
+                setIsSecondGameEnded(true)
+                localStorage.removeItem('gameid')
+            }).catch(err => {
+                console.log(err)
+            })
+    }
+
+
+
+
     const game = () => {
 
         var NONE = 4,
@@ -308,7 +363,7 @@ const PacmanGame = () => {
 
             function initUser() {
                 score = 0;
-                lives = 3;
+                lives = 1;
                 newLevel();
             }
 
@@ -856,6 +911,12 @@ const PacmanGame = () => {
                 if (user.getLives() > 0) {
                     startLevel();
                 }
+                if (user.getLives() === 0) {
+                    console.log("Game Ended", user.theScore())
+                    userGameEnd(user.theScore())
+                    // window.location.href = '/'
+                    // history.push('/')
+                }
             }
 
             function setState(nState) {
@@ -1266,7 +1327,10 @@ const PacmanGame = () => {
         PACMAN.init(el)
     }
 
+
+
     useEffect(() => {
+        findPlayer()
         game()
         return () => {
         }
@@ -1274,8 +1338,40 @@ const PacmanGame = () => {
 
     return (
         <div>
-            <div id="pacman"></div>
-        </div>
+            <div>
+                {
+                    !isPlayerFound &&
+                    <div className="findPlayer">
+                        Finding Player! Please Wait...
+                    </div>
+                }
+                {
+                    isPlayerFound &&
+                    <div className="findPlayer">
+                        GameId: <span className="bold" onLoad={localStorage.setItem('gameid', gameId)}>{gameId}</span> <br />
+                        You are matched with <span className="bold">{secondPlayerAddress}</span>
+                    </div>
+                }
+            </div>
+            <div className={isPlayerFound && !userIsGameEnded ? 'visible' : 'notVisible'}>
+                <div id="pacman"></div>
+            </div>
+
+            {
+                userIsGameEnded && !isSecondGameEnded &&
+                <div className="loading">
+                    Please Wait Second Player is Still Playing...
+                </div>
+            }
+
+            {
+                userIsGameEnded && isSecondGameEnded &&
+                <div className="winner">
+                    Winner: {winner}
+                </div>
+            }
+
+        </div >
     )
 }
 

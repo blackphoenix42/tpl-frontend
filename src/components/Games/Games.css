@@ -1,6 +1,6 @@
 .GamesComp {
   background-color: #171c28;
-  height: 100vh;
+  height: 200vh;
   padding: 0.1px;
   /* border: 1px solid red; */
   margin: 10px 10px 0px 0px;
@@ -63,9 +63,11 @@
 }
 
 #pacman {
-  height: 400px;
-  width: 342px;
-  margin: 20px auto;
+  height: 700px;
+  width: 694px;
+  margin-top: 0px;
+  margin-bottom: 200px;
+  margin-left: 450px;
   border: 2px solid red;
   background-color: #008cba;
 }

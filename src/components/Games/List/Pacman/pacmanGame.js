@@ -1339,7 +1339,7 @@ const PacmanGame = () => {
     }, [])
 
     return (
-        <div>
+        <div style={{backgroundColor: "black", color: "white", padding:"0.1px"}}>
             <div>
                 {
                     !isPlayerFound &&
@@ -1373,7 +1373,7 @@ const PacmanGame = () => {
                 </div>
             }
 
-        </div >
+        </div>
     )
 }
 

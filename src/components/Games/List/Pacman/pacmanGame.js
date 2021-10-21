@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import api from '../../../../api/api'
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 const PacmanGame = () => {
     let history = useHistory()
@@ -1342,7 +1344,7 @@ const PacmanGame = () => {
                 {
                     !isPlayerFound &&
                     <div className="findPlayer">
-                        Finding Player! Please Wait...
+                        <CircularProgress/> Finding Player! Please Wait...
                     </div>
                 }
                 {

@@ -20,6 +20,7 @@ const Home = () => {
                         <li style={{ color: "#a1f703d8" }}>Own amazing Gaming NFT Collectibles</li>
                     </ul>
                     <br />
+                    <br /><br />
                     <br />
                     <a href="#games" ><Button variant="contained" color="primary" size="large">Start Gaming</Button></a> &nbsp;&nbsp;&nbsp;
                     <a href="#marketplace" ><Button variant="outlined" color="secondary" size="large">View NFT Marketplace</Button></a>

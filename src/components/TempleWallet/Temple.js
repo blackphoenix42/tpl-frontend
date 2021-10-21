@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { TempleWallet } from "@temple-wallet/dapp";
 import './Temple.css'
 import Button from '@mui/material/Button';
@@ -13,16 +13,16 @@ import Box from '@mui/material/Box';
 require('request');
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: '#00000081',
-  boxShadow: 24,
-  color: 'white',
-  textAlign: 'center',
-  p: 4,
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: '#00000081',
+    boxShadow: 24,
+    color: 'white',
+    textAlign: 'center',
+    p: 4,
 };
 
 
@@ -44,13 +44,28 @@ const Temple = () => {
     // tezos.setProvider({
     //         signer: new InMemorySigner('edskS2ajPBfbKxkemWneQTpJhw482xcXT1YT4FwZHyQcs4fRbdc5eQxbrEnD2V7gzXc6NAdUjh42ywQZhiQ9ZBkA9GEDtBv5bN'),
     //       });
-    const block = axios.get('https://api.florencenet.tzkt.io/v1/blocks/count').then((block) => {setBlock(block.data)});
+
+
 
     useEffect(() => {
-        axios.get(`https://rpc.tzkt.io/florencenobanet/chains/main/blocks/${currBlock}/context/big_maps/142822/expruG4cvmeEDvLzVibixXoxC4p8Pip9RnvGyou8vL4uwWdvPfFKE8`)
-        .then(res => {
-            setTokBal(res.data.args[1].int)
-      })
+        const balanceApi = () => {
+            axios.get(`https://rpc.tzkt.io/florencenobanet/chains/main/blocks/${currBlock}/context/big_maps/142822/expruG4cvmeEDvLzVibixXoxC4p8Pip9RnvGyou8vL4uwWdvPfFKE8`)
+                .then(res => {
+                    setTokBal(res.data.args[1].int)
+                })
+        }
+        balanceApi()
+
+        const interval = setInterval(() => axios.get('https://api.florencenet.tzkt.io/v1/blocks/count')
+            .then((block) => {
+                setBlock(block.data)
+                balanceApi()
+            }), 10000)
+
+        return () => {
+            clearInterval(interval)
+        }
+
     })
 
 
@@ -59,7 +74,7 @@ const Temple = () => {
         setMessage("Connecting to Wallet ...");
         handleOpen();
         try {
-            
+
             const available = await TempleWallet.isAvailable();
 
             if (!available) {
@@ -77,33 +92,34 @@ const Temple = () => {
             localStorage.setItem('userAddress', userAddress)
             setMessage("Getting Tokens ...")
             Tezos.wallet
-                    .at('KT1HnJ8RrPLKkRXzkxDfYXD28RgsC2n63BcR')
-                    .then((contract) => contract.methods.mint(userAddress,10).send({amount:1, mutez:false}))
-                    .then((op) => {
-                        setMessage("Waiting for Confirmation ... ")
-                        console.log(`Hash: ${op.opHash}`);
-                        return op.confirmation();
-                    })
-                    .then((result) => {
-                        console.log(result);
-                        if (result.completed) {
+                .at('KT1HnJ8RrPLKkRXzkxDfYXD28RgsC2n63BcR')
+                .then((contract) => contract.methods.mint(userAddress, 10).send({ amount: 1, mutez: false }))
+                .then((op) => {
+                    setMessage("Waiting for Confirmation ... ")
+                    console.log(`Hash: ${op.opHash}`);
+                    return op.confirmation();
+                })
+                .then((result) => {
+                    console.log(result);
+                    if (result.completed) {
                         console.log(`Transaction correctly processed!
                         Block: ${result.block.header.level}
                         Chain ID: ${result.block.chain_id}`);
                         setBlock(result.block.header.level)
                         setMessage("Transaction SuccessFul");
                         handleClose();
-                        } else {
+                    } else {
                         console.log('An error has occurred');
                         handleClose();
                         alert('An error has occurred');
-                        }
-                    })
-                    .catch((err) => {console.log(err);
-                        handleClose();
-                        alert('An error has occurred');
-                    });
-         
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                    handleClose();
+                    alert('An error has occurred');
+                });
+
 
         } catch (err) {
             console.log(err);
@@ -149,9 +165,9 @@ const Temple = () => {
 
                     <div className="profileInfo">
                         <div className="address">
-                            Address: {localStorage.getItem('userAddress')} <br/>
-                            Account Balance: {(!loading) ? accBal : <CircularProgress/>} ꜩ <br/>
-                            PLAY Token Balance: {(!loading) ? PLAYtoken : <CircularProgress/>} PLAY
+                            Address: {localStorage.getItem('userAddress')} <br />
+                            Account Balance: {(!loading) ? accBal : <CircularProgress />} ꜩ <br />
+                            PLAY Token Balance: {(!loading) ? PLAYtoken : <CircularProgress />} PLAY
                         </div>
 
                         <div className="levelContainer">
@@ -192,9 +208,9 @@ const Temple = () => {
                                 <a target="_blank" href="img/nft/8.svg">
                                     <img src="img/nft/8.svg" alt="" />
                                 </a>
-                                <input type="number" placeholder="Number of Tokens"/>
-                                {(!loading) ? <Button variant="contained" color="warning" size="medium" onClick={() => {getTokenBalance()}}>Get tokens</Button> : <CircularProgress/>}
-                                <br/>
+                                <input type="number" placeholder="Number of Tokens" />
+                                {(!loading) ? <Button variant="contained" color="warning" size="medium" onClick={() => { getTokenBalance() }}>Get tokens</Button> : <CircularProgress />}
+                                <br />
                                 <Modal
                                     open={open}
                                     onClose={handleClose}
@@ -202,9 +218,9 @@ const Temple = () => {
                                     aria-describedby="modal-modal-description"
                                 >
                                     <Box sx={style}>
-                                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                                        {message} <CircularProgress/>
-                                    </Typography>
+                                        <Typography id="modal-modal-title" variant="h6" component="h2">
+                                            {message} <CircularProgress />
+                                        </Typography>
                                     </Box>
                                 </Modal>
                                 {/* <button>LOAD MORE</button> */}

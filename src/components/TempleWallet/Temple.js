@@ -78,7 +78,7 @@ const Temple = () => {
             setMessage("Getting Tokens ...")
             Tezos.wallet
                     .at('KT1HnJ8RrPLKkRXzkxDfYXD28RgsC2n63BcR')
-                    .then((contract) => contract.methods.mint(userAddress,10).send())
+                    .then((contract) => contract.methods.mint(userAddress,10).send({amount:1, mutez:false}))
                     .then((op) => {
                         setMessage("Waiting for Confirmation ... ")
                         console.log(`Hash: ${op.opHash}`);

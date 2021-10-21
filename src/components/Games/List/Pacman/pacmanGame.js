@@ -1,10 +1,31 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import api from '../../../../api/api'
+import { TempleWallet } from "@temple-wallet/dapp";
 import CircularProgress from '@mui/material/CircularProgress';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: '#00000081',
+  boxShadow: 24,
+  color: 'white',
+  textAlign: 'center',
+  p: 4,
+};
 
 
 const PacmanGame = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     let history = useHistory()
     const userAddress = localStorage.getItem('userAddress')
     const [gameId, setGameId] = useState(0)
@@ -14,7 +35,12 @@ const PacmanGame = () => {
     const [isSecondGameEnded, setIsSecondGameEnded] = useState(false)
     const [winner, setWinner] = useState('')
 
+    const GoBack = () => {
+        history.push('/games/about/pacman');
+    }
+
     const findPlayer = async () => {
+        handleOpen();
         await api.get(`/player-game=pacman&player=${userAddress}`)
             .then((res) => {
                 setGameId(res.data.gameid)
@@ -25,9 +51,11 @@ const PacmanGame = () => {
             }).catch(err => {
                 console.log(err)
             })
+        handleClose();
     }
 
     const userGameEnd = async (score) => {
+        handleOpen();
         await api.post('updatescore', {
             "game": "pacman",
             "gameid": localStorage.getItem('gameid'),
@@ -40,6 +68,7 @@ const PacmanGame = () => {
         }).catch(err => {
             console.log(err)
         })
+        
     }
 
     const secondGameEnd = async () => {
@@ -848,7 +877,7 @@ const PacmanGame = () => {
 
             function drawScore(text, position) {
                 ctx.fillStyle = "#FFFFFF";
-                ctx.font = "12px BDCartoonShoutRegular";
+                ctx.font = "15px BDCartoonShoutRegular";
                 ctx.fillText(text,
                     (position["new"]["x"] / 10) * map.blockSize,
                     ((position["new"]["y"] + 5) / 10) * map.blockSize);
@@ -1092,8 +1121,8 @@ const PacmanGame = () => {
                     blockSize = wrapper.offsetWidth / 19,
                     canvas = document.createElement("canvas");
 
-                canvas.setAttribute("width", (blockSize * 19) + "px");
-                canvas.setAttribute("height", (blockSize * 22) + 30 + "px");
+                canvas.setAttribute("width", (blockSize * 19) + 10 + "px");
+                canvas.setAttribute("height", (blockSize * 22) + 50 + "px");
 
                 wrapper.appendChild(canvas);
 
@@ -1341,17 +1370,32 @@ const PacmanGame = () => {
     return (
         <div style={{backgroundColor: "black", color: "white", padding:"0.1px"}}>
             <div>
+            {/* <div style={{backgroundColor:"white", height:"50%", width:"10%", color: "black"}}>
+                        Hello
+            </div> */}
                 {
                     !isPlayerFound &&
-                    <div className="findPlayer">
-                        <CircularProgress/> Finding Player! Please Wait...
-                    </div>
+
+                    <Modal
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description">
+                        <Box sx={style}>
+                        <Typography id="modal-modal-title" variant="h6" component="h2">   
+                
+                         Finding Player! Please Wait.. <CircularProgress/>.
+                        </Typography>
+                        </Box>
+                    </Modal>
+                    
                 }
                 {
                     isPlayerFound &&
-                    <div className="findPlayer">
+                    <div className="findPlayer" style={{marginLeft:"0%"}}>
                         GameId: <span className="bold" onLoad={localStorage.setItem('gameid', gameId)}>{gameId}</span> <br />
-                        You are matched with <span className="bold">{secondPlayerAddress}</span>
+                        Opponent: <span className="bold">{secondPlayerAddress}</span>
+                        
                     </div>
                 }
             </div>
@@ -1361,19 +1405,45 @@ const PacmanGame = () => {
 
             {
                 userIsGameEnded && !isSecondGameEnded &&
-                <div className="loading">
-                    Please Wait Second Player is Still Playing...
-                </div>
+                
+                <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box sx={style}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+              
+                        Please Wait Opponent is Still Playing... <CircularProgress/> <br/>
+                        <span style={{ color:"yellow"}}>Stay to know the results or Click End Game below and Score will be updated as the opponent ends the game</span> <br/>
+                        <Button variant="contained" color="primary" size="large" onClick={()=> {GoBack()}}> End Game </Button>
+                    </Typography>
+                    </Box>
+                </Modal>
             }
 
             {
                 userIsGameEnded && isSecondGameEnded &&
-                <div className="winner">
-                    Winner: {winner}
-                </div>
+                
+                <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box sx={style}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+               
+                        Winner: {winner}
+                        <Button variant="contained" color="primary" size="large" onClick={()=> {GoBack()}}> End Game </Button>
+                    </Typography>
+                    </Box>
+                </Modal>
             }
-
+            
         </div>
+        
     )
 }
 

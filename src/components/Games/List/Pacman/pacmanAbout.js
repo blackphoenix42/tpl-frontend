@@ -19,7 +19,7 @@ const style = {
     p: 4,
 };
 
-const PacmanAbout = () => {
+const pacmanAbout = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -121,4 +121,4 @@ const PacmanAbout = () => {
     )
 }
 
-export default PacmanAbout
+export default pacmanAbout

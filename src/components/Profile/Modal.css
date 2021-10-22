@@ -1,4 +1,4 @@
-.modalOverlay {
+.profileModalOverlay {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +30,7 @@
   }
 }
 
-.modal {
+.profileModal {
   width: 30%;
   background-color: #fff;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);

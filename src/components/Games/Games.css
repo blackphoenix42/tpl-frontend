@@ -1,12 +1,12 @@
 .GamesComp {
   background-color: #171c28;
-  height: 100vh;
+  height: 90vh;
   padding: 0.1px;
   /* border: 1px solid red; */
   margin: 10px 10px 0px 0px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-evenly; */
   width: 100%;
 }
 
@@ -14,14 +14,11 @@
   font-family: Inter;
   font-style: normal;
   font-weight: 800;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 106%;
   letter-spacing: -0.2px;
   color: #ffffff;
   text-align: center;
-}
-.gameGallery {
-  padding-left: 500px;
 }
 
 .aboutGame {

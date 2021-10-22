@@ -44,10 +44,9 @@ const Modal = ({ onCloseRequest, children }) => {
     }, [handleKeyUp]);
 
     return (
-        <div className="modalOverlay">
-            <div className="modal" ref={modal}>
-                <button
-                    type="button"
+        <div className="profileModalOverlay">
+            <div className="profileModal" ref={modal}>
+                <div
                     className="closeButton"
                     onClick={onCloseRequest}
                 />

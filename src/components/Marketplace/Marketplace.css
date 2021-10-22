@@ -1,39 +1,9 @@
 .marketplaceComp {
-  padding-top: 1px;
+  /* padding-top: 1px; */
   background-color: #1e2235;
-  height: 90vh;
+  height: 100vh;
+  /* margin-bottom: 500px; */
 }
-
-#marketwelcome {
-  font-size: 50px;
-}
-.marketabout {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 25px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.marketIpfs {
-  margin: 10px 10px 0px 0px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 100%;
-}
-.marketIpfs img {
-  border-radius: 4px;
-  padding: 5px;
-  width: 300px;
-}
-
-.marketIpfs img:hover {
-  /* box-shadow: 0 0 2px 1px rgba(187, 16, 16, 0.507); */
-  opacity: 0.8;
-}
-
 .marketplaceComp button {
   background-color: #008cba;
   border: none;
@@ -50,4 +20,40 @@
 
 .marketplaceComp button:hover {
   opacity: 0.8;
+}
+
+#marketwelcome {
+  font-size: 30px;
+}
+.marketabout {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* .marketIpfs {
+  margin: 10px 10px 0px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.marketIpfs img {
+  border-radius: 4px;
+  padding: 5px;
+  width: 300px;
+}
+
+.marketIpfs img:hover {
+  box-shadow: 0 0 2px 1px rgba(187, 16, 16, 0.507);
+  opacity: 0.8;
+} */
+
+.banner {
+  background: #a770ef;
+  background: -webkit-linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
 }

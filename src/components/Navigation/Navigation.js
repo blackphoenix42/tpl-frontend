@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Profile from '../Profile/Profile'
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import './Navigation.css'
 
 const Navigation = () => {
@@ -18,16 +20,22 @@ const Navigation = () => {
     }
 
     return (
-        <div className="nav" >
+        <div className="navigation" >
 
             <div className="logo" >
                 <img src="/img/Logo/black_bg.png" alt="" />
             </div>
 
             <div className="menu">
+                {/* <Stack direction="row" spacing={2} >
+                    <Button href="#home" style={{ fontFamily: 'Gladerglynn Titling', fontSize: '20px' }}>Home</Button>
+                    <Button href="#games" style={{ fontFamily: 'Gladerglynn Titling', fontSize: '20px' }}>Games</Button>
+                    <Button href="#marketplace" style={{ fontFamily: 'Gladerglynn Titling', fontSize: '20px' }}>Marketplace</Button>
+                </Stack> */}
                 <ul className="menuList">
                     <li className="li" id={activeHome ? 'selected' : null} onClick={toggleClass} >
                         <a href="#home" >HOME</a>
+
                     </li>
 
                     <li className="li" id={activeGame ? 'selected' : null} onClick={toggleClass} >

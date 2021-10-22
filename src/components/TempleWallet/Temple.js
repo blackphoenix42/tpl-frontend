@@ -155,7 +155,7 @@ const Temple = () => {
     }
 
     return (
-        <div className="card">
+        <div className="profileCard">
             {
                 localStorage.getItem('isLoggedIn') &&
                 <div>
@@ -172,7 +172,7 @@ const Temple = () => {
 
                         <div className="levelContainer">
                             Level:
-                            <div className="container">
+                            <div className="skillContainer">
                                 <div className="skills level">90%</div>
                             </div>
                         </div>

@@ -7,9 +7,8 @@ const Profile = () => {
     const [showModal, setShowModal] = useState(false);
     return (
         <div className="wrapper">
-            <button
-                type="button"
-                className="modalButton"
+            <div
+                className="profileModalButton"
                 onClick={() => setShowModal(true)}
             >
                 {
@@ -20,7 +19,7 @@ const Profile = () => {
                     localStorage.getItem('isLoggedIn') &&
                     <img src="/img/extras/profile_connected.svg" alt="Profile" className="svgProfile" ></img>
                 }
-            </button>
+            </div>
 
             {showModal && (
                 <Modal onCloseRequest={() => setShowModal(false)}><Temple /></Modal>

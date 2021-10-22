@@ -1,4 +1,4 @@
-.nav {
+.navigation {
   position: fixed;
   display: flex;
   align-items: center;
@@ -7,6 +7,7 @@
   height: 80px;
   width: 100%;
   background-color: #171c28;
+  z-index: 999;
 }
 
 .logo img {
@@ -33,6 +34,6 @@ a {
 }
 
 #selected {
-  color: #275efe;
+  color: #429ffd;
   text-decoration: underline;
 }

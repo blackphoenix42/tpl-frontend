@@ -96,7 +96,7 @@ const Temple = () => {
             setMessage("Getting Tokens ...")
             Tezos.wallet
                 .at('KT1HnJ8RrPLKkRXzkxDfYXD28RgsC2n63BcR')
-                .then((contract) => contract.methods.mint(userAddress, amount).send({ amount: (amount * 20000), mutez: true }))
+                .then((contract) => contract.methods.mint(userAddress, amount).send({ amount: (amount * 200), mutez: true }))
                 .then((op) => {
                     setMessage("Waiting for Confirmation ... ")
                     console.log(`Hash: ${op.opHash}`);
@@ -162,7 +162,7 @@ const Temple = () => {
 
         if (name === 'amount') {
             setAmount(value);
-            
+
         }
         console.log(amount);
     };
@@ -197,30 +197,30 @@ const Temple = () => {
                         <div className="nft">
                             NFT:
                             <div className="ipfs">
-                                <a target="_blank" href="img/nft/1.svg">
-                                    <img src="img/nft/1.svg" alt="" />
+                                <a target="_blank" href="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/1.svg">
+                                    <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/1.svg" alt="" />
                                 </a>
-                                <a target="_blank" href="img/nft/2.svg">
-                                    <img src="img/nft/2.svg" alt="" />
+                                <a target="_blank" href="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/2.svg">
+                                    <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/2.svg" alt="" />
                                 </a>
-                                <a target="_blank" href="img/nft/3.svg">
-                                    <img src="img/nft/3.svg" alt="" />
+                                <a target="_blank" href="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/3.svg">
+                                    <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/3.svg" alt="" />
                                 </a>
-                                <a target="_blank" href="img/nft/4.svg">
-                                    <img src="img/nft/4.svg" alt="" />
+                                <a target="_blank" href="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/4.svg">
+                                    <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/4.svg" alt="" />
                                 </a>
-                                <a target="_blank" href="img/nft/5.svg">
-                                    <img src="img/nft/5.svg" alt="" />
+                                <a target="_blank" href="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/5.svg">
+                                    <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/5.svg" alt="" />
                                 </a>
-                                <a target="_blank" href="img/nft/6.svg">
-                                    <img src="img/nft/6.svg" alt="" />
+                                <a target="_blank" href="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/6.svg">
+                                    <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/6.svg" alt="" />
                                 </a>
-                                <a target="_blank" href="img/nft/7.svg">
-                                    <img src="img/nft/7.svg" alt="" />
+                                <a target="_blank" href="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/7.svg">
+                                    <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/7.svg" alt="" />
                                 </a>
-                                <a target="_blank" href="img/nft/8.svg">
-                                    <img src="img/nft/8.svg" alt="" />
-                                </a> <br/>
+                                <a target="_blank" href="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/8.svg">
+                                    <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/NFT/8.svg" alt="" />
+                                </a> <br />
                                 <input id="standard-basic" label="Number of Tokens" variant="standard" type="number" required
                                     value={amount} name="amount" onChange={(event) => { onChangeHandler(event) }}
                                 /> &nbsp;&nbsp;&nbsp;

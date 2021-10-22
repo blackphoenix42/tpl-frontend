@@ -8,7 +8,7 @@ const Games = () => {
 
     return (
         <div className="GamesComp">
-            <p id="tagline" style={{ marginTop: "7%" }}>PLAY TO WIN!!</p> <br/><br/><br/><br/>
+            <p id="tagline" style={{ marginTop: "7%" }}>PLAY TO WIN!!</p> <br /><br /><br /><br />
 
             <div id="carouselExampleIndicators" className="carousel slide w-50" data-ride="carousel" style={{ display: 'block', marginRight: 'auto', marginLeft: 'auto' }}>
                 <ol className="carousel-indicators">
@@ -20,17 +20,17 @@ const Games = () => {
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <Link to="/games/about/pacman">
-                            <img src="/img/games/pacman.png" className="d-block w-100" alt="" />
+                            <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/games/pacman.png" className="d-block w-100" alt="" />
                         </Link>
                     </div>
                     <div className="carousel-item">
-                        <img src="/img/games/chess.png" className="d-block w-100" alt="" />
+                        <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/games/chess.png" className="d-block w-100" alt="" />
                     </div>
                     <div className="carousel-item">
-                        <img src="/img/games/carrom.png" className="d-block w-100" alt="" />
+                        <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/games/carrom.png" className="d-block w-100" alt="" />
                     </div>
                     <div className="carousel-item">
-                        <img src="/img/games/snake.png" className="d-block w-100" alt="" />
+                        <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/games/snake.png" className="d-block w-100" alt="" />
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

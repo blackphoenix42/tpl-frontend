@@ -13,11 +13,11 @@ const Profile = () => {
             >
                 {
                     !localStorage.getItem('isLoggedIn') &&
-                    <img src="/img/extras/profile.svg" alt="Profile" className="svgProfile" ></img>
+                    <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/Extras/Profile.svg" alt="Profile" className="svgProfile" ></img>
                 }
                 {
                     localStorage.getItem('isLoggedIn') &&
-                    <img src="/img/extras/profile_connected.svg" alt="Profile" className="svgProfile" ></img>
+                    <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/e5ea605a0859d301a6a2883eeae9370fedb2d0a5/public/img/Extras/Profile_Connected.svg" alt="Profile" className="svgProfile" ></img>
                 }
             </div>
 

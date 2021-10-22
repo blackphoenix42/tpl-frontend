@@ -24,7 +24,7 @@ const style = {
 
 const Marketplace = () => {
     const [open, setOpen] = useState(false);
-    
+
     const [message, setMessage] = useState("Click To Buy");
     const history = useHistory();
     const [nftName, setNftName] = useState();
@@ -93,9 +93,9 @@ const Marketplace = () => {
             localStorage.setItem('userAddress', null)
             setMessage("Failed Try Again !");
         }
-        }
+    }
     return (
-        <div className="marketplaceComp" style={{ marginTop:"4.5%"}}>
+        <div className="marketplaceComp" style={{ marginTop: "4.5%" }}>
 
             <p className="marketabout">
                 <span id="marketwelcome">Welcome to Marketplace</span> <br />
@@ -105,12 +105,12 @@ const Marketplace = () => {
             <div className="px-lg-5">
                 <div className="row">
                     <div className="col-xl-3 col-lg-4 col-md-6 mb-4">
-                        <div className="bg-white rounded shadow-sm"><img src="/img/nft/pacman.png" alt="" className="img-fluid card-img-top" />
+                        <div className="bg-white rounded shadow-sm"><img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/pacman.png" alt="" className="img-fluid card-img-top" />
                             <div className="p-4">
                                 <h5> <a href="#!" className="text-dark">Inky Ghost</a></h5>
                                 <p className="small text-muted mb-0">tz1LXRS2zgh12gbGix6R9xSLJwfwqM9VdpPW</p>
-                                <div onClick={()=>{handleOpen("Inky Ghost",170,"tz1LXRS2zgh12gbGix6R9xSLJwfwqM9VdpPW","/img/nft/pacman.png")}} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                                    <p className="small mb-0"><img style={{width:"15%", height:"15%"}} src="/img/Logo/token.png" alt="PLAY token"/><span className="font-weight-bold">&nbsp;&nbsp;170</span></p>
+                                <div onClick={() => { handleOpen("Inky Ghost", 170, "tz1LXRS2zgh12gbGix6R9xSLJwfwqM9VdpPW", "https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/pacman.png") }} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                                    <p className="small mb-0"><img style={{ width: "15%", height: "15%" }} src="/img/Logo/token.png" alt="PLAY token" /><span className="font-weight-bold">&nbsp;&nbsp;170</span></p>
                                     <div className="badge badge-danger px-3 rounded-pill font-weight-normal">New</div>
                                 </div>
                             </div>
@@ -118,12 +118,12 @@ const Marketplace = () => {
                     </div>
 
                     <div className="col-xl-3 col-lg-4 col-md-6 mb-4">
-                        <div className="bg-white rounded shadow-sm"><img src="/img/nft/pacman_tattoo.png" alt="" className="img-fluid card-img-top" />
+                        <div className="bg-white rounded shadow-sm"><img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/pacman_tattoo.png" alt="" className="img-fluid card-img-top" />
                             <div className="p-4">
                                 <h5> <a href="#!" className="text-dark">Pacman Tattoo</a></h5>
                                 <p className="small text-muted mb-0">tz1LXRS2zgh12gbGix6R9xSLJwfwqM9VdpPW</p>
-                                <div onClick={()=>{handleOpen("Pacman Tattoo",1000,"tz1LXRS2zgh12gbGix6R9xSLJwfwqM9VdpPW","/img/nft/pacman_tattoo.png")}}   className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                                    <p className="small mb-0"><img style={{width:"15%", height:"15%"}} src="/img/Logo/token.png" alt="PLAY token"/><span className="font-weight-bold">&nbsp;&nbsp;1000</span></p>
+                                <div onClick={() => { handleOpen("Pacman Tattoo", 1000, "tz1LXRS2zgh12gbGix6R9xSLJwfwqM9VdpPW", "https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/pacman_tattoo.png") }} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                                    <p className="small mb-0"><img style={{ width: "15%", height: "15%" }} src="/img/Logo/token.png" alt="PLAY token" /><span className="font-weight-bold">&nbsp;&nbsp;1000</span></p>
                                     <div className="badge badge-primary px-3 rounded-pill font-weight-normal">Trend</div>
                                 </div>
                             </div>
@@ -131,12 +131,12 @@ const Marketplace = () => {
                     </div>
 
                     <div className="col-xl-3 col-lg-4 col-md-6 mb-4">
-                        <div className="bg-white rounded shadow-sm"><img src="/img/nft/Ms_Pacman.png" alt="" className="img-fluid card-img-top" />
+                        <div className="bg-white rounded shadow-sm"><img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/Ms_Pacman.png" alt="" className="img-fluid card-img-top" />
                             <div className="p-4">
                                 <h5> <a href="#!" className="text-dark">Ms. Pacman</a></h5>
                                 <p className="small text-muted mb-0">tz1QuV6ZKSKRpnbr1SXkWpDQec4mzh3iHiMA</p>
-                                <div onClick={()=>{handleOpen("Ms. Pacman",1220,"tz1QuV6ZKSKRpnbr1SXkWpDQec4mzh3iHiMA","/img/nft/Ms_Pacman.png")}} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                                    <p className="small mb-0"><img style={{width:"15%", height:"15%"}} src="/img/Logo/token.png" alt="PLAY token"/><span className="font-weight-bold">&nbsp;&nbsp;1220</span></p>
+                                <div onClick={() => { handleOpen("Ms. Pacman", 1220, "tz1QuV6ZKSKRpnbr1SXkWpDQec4mzh3iHiMA", "https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/Ms_Pacman.png") }} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                                    <p className="small mb-0"><img style={{ width: "15%", height: "15%" }} src="/img/Logo/token.png" alt="PLAY token" /><span className="font-weight-bold">&nbsp;&nbsp;1220</span></p>
                                     <div className="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
                                 </div>
                             </div>
@@ -144,12 +144,12 @@ const Marketplace = () => {
                     </div>
 
                     <div className="col-xl-3 col-lg-4 col-md-6 mb-4">
-                        <div className="bg-white rounded shadow-sm"><img src="/img/nft/pacman_flyer.png" alt="" className="img-fluid card-img-top" />
+                        <div className="bg-white rounded shadow-sm"><img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/Pacman_flyer.png" alt="" className="img-fluid card-img-top" />
                             <div className="p-4">
                                 <h5> <a href="#!" className="text-dark">Pacman Flyer</a></h5>
                                 <p className="small text-muted mb-0">tz1LXRS2zgh12gbGix6R9xSLJwfwqM9VdpPW</p>
-                                <div onClick={()=>{handleOpen("Pacman Flyer",1270,"tz1LXRS2zgh12gbGix6R9xSLJwfwqM9VdpPW","/img/nft/pacman_flyer.png")}} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                                    <p className="small mb-0"><img style={{width:"15%", height:"15%"}} src="/img/Logo/token.png" alt="PLAY token"/><span className="font-weight-bold">&nbsp;&nbsp;1270</span></p>
+                                <div onClick={() => { handleOpen("Pacman Flyer", 1270, "tz1LXRS2zgh12gbGix6R9xSLJwfwqM9VdpPW", "https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/Pacman_flyer.png") }} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                                    <p className="small mb-0"><img style={{ width: "15%", height: "15%" }} src="/img/Logo/token.png" alt="PLAY token" /><span className="font-weight-bold">&nbsp;&nbsp;1270</span></p>
                                     <div className="badge badge-success px-3 rounded-pill font-weight-normal">Hot</div>
                                 </div>
                             </div>
@@ -157,12 +157,12 @@ const Marketplace = () => {
                     </div>
 
                     <div className="col-xl-3 col-lg-4 col-md-6 mb-4">
-                        <div className="bg-white rounded shadow-sm"><img src="/img/nft/pacman_spirit.png" alt="" className="img-fluid card-img-top" />
+                        <div className="bg-white rounded shadow-sm"><img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/pacman_spirit.png" alt="" className="img-fluid card-img-top" />
                             <div className="p-4">
                                 <h5> <a href="#!" className="text-dark">Spiritful Pacman</a></h5>
                                 <p className="small text-muted mb-0">tz1QuV6ZKSKRpnbr1SXkWpDQec4mzh3iHiMA</p>
-                                <div onClick={()=>{handleOpen("Spiritful Pacman",150,"tz1QuV6ZKSKRpnbr1SXkWpDQec4mzh3iHiMA","/img/nft/pacman_spirit.png")}} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                                    <p className="small mb-0"><img style={{width:"15%", height:"15%"}} src="/img/Logo/token.png" alt="PLAY token"/><span className="font-weight-bold">&nbsp;&nbsp;150</span></p>
+                                <div onClick={() => { handleOpen("Spiritful Pacman", 150, "tz1QuV6ZKSKRpnbr1SXkWpDQec4mzh3iHiMA", "https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/pacman_spirit.png") }} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                                    <p className="small mb-0"><img style={{ width: "15%", height: "15%" }} src="/img/Logo/token.png" alt="PLAY token" /><span className="font-weight-bold">&nbsp;&nbsp;150</span></p>
                                     <div className="badge badge-primary px-3 rounded-pill font-weight-normal">New</div>
                                 </div>
                             </div>
@@ -170,12 +170,12 @@ const Marketplace = () => {
                     </div>
 
                     <div className="col-xl-3 col-lg-4 col-md-6 mb-4">
-                        <div className="bg-white rounded shadow-sm"><img src="/img/nft/arcade_pacman_machine.png" alt="" className="img-fluid card-img-top" />
+                        <div className="bg-white rounded shadow-sm"><img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/arcade_pacman_machine.png" alt="" className="img-fluid card-img-top" />
                             <div className="p-4">
                                 <h5> <a href="#!" className="text-dark">Vintage Pacman Arcade</a></h5>
                                 <p className="small text-muted mb-0">tz1fdhwQ2ubNgzm3UdAzsFUqp6mevqD8R895</p>
-                                <div onClick={()=>{handleOpen("Vintage Pacman Arcade",430,"tz1fdhwQ2ubNgzm3UdAzsFUqp6mevqD8R895","/img/nft/arcade_pacman_machine.png")}} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                                    <p className="small mb-0"><img style={{width:"15%", height:"15%"}} src="/img/Logo/token.png" alt="PLAY token"/><span className="font-weight-bold">&nbsp;&nbsp;430</span></p>
+                                <div onClick={() => { handleOpen("Vintage Pacman Arcade", 430, "tz1fdhwQ2ubNgzm3UdAzsFUqp6mevqD8R895", "https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/arcade_pacman_machine.png") }} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                                    <p className="small mb-0"><img style={{ width: "15%", height: "15%" }} src="/img/Logo/token.png" alt="PLAY token" /><span className="font-weight-bold">&nbsp;&nbsp;430</span></p>
                                     <div className="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
                                 </div>
                             </div>
@@ -187,8 +187,8 @@ const Marketplace = () => {
                             <div className="p-4">
                                 <h5> <a href="#!" className="text-dark">Game Console</a></h5>
                                 <p className="small text-muted mb-0">tz1QuV6ZKSKRpnbr1SXkWpDQec4mzh3iHiMA</p>
-                                <div onClick={()=>{handleOpen("Game Console",340,"tz1QuV6ZKSKRpnbr1SXkWpDQec4mzh3iHiMA","https://bootstrapious.com/i/snippets/sn-gallery/img-7.jpg")}} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                                    <p className="small mb-0"><img style={{width:"15%", height:"15%"}} src="/img/Logo/token.png" alt="PLAY token"/><span className="font-weight-bold">&nbsp;&nbsp;340</span></p>
+                                <div onClick={() => { handleOpen("Game Console", 340, "tz1QuV6ZKSKRpnbr1SXkWpDQec4mzh3iHiMA", "https://bootstrapious.com/i/snippets/sn-gallery/img-7.jpg") }} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                                    <p className="small mb-0"><img style={{ width: "15%", height: "15%" }} src="/img/Logo/token.png" alt="PLAY token" /><span className="font-weight-bold">&nbsp;&nbsp;340</span></p>
                                     <div className="badge badge-info px-3 rounded-pill font-weight-normal">Hot</div>
                                 </div>
                             </div>
@@ -196,12 +196,12 @@ const Marketplace = () => {
                     </div>
 
                     <div className="col-xl-3 col-lg-4 col-md-6 mb-4">
-                        <div className="bg-white rounded shadow-sm"><img src="/img/nft/clyde_ate_pacman.png" alt="" className="img-fluid card-img-top" />
+                        <div className="bg-white rounded shadow-sm"><img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/clyde_ate_pacman.png" alt="" className="img-fluid card-img-top" />
                             <div className="p-4">
                                 <h5> <a href="#!" className="text-dark">Clyde ate Pacman.</a></h5>
                                 <p className="small text-muted mb-0">tz1fdhwQ2ubNgzm3UdAzsFUqp6mevqD8R895</p>
-                                <div onClick={()=>{handleOpen("Clyde ate Pacman",1020,"tz1fdhwQ2ubNgzm3UdAzsFUqp6mevqD8R895","/img/nft/clyde_ate_pacman.png")}} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                                    <p className="small mb-0"><img style={{width:"15%", height:"15%"}} src="/img/Logo/token.png" alt="PLAY token"/><span className="font-weight-bold">&nbsp;&nbsp;1020</span></p>
+                                <div onClick={() => { handleOpen("Clyde ate Pacman", 1020, "tz1fdhwQ2ubNgzm3UdAzsFUqp6mevqD8R895", "https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/NFT/clyde_ate_pacman.png") }} className="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                                    <p className="small mb-0"><img style={{ width: "15%", height: "15%" }} src="/img/Logo/token.png" alt="PLAY token" /><span className="font-weight-bold">&nbsp;&nbsp;1020</span></p>
                                     <div className="badge badge-warning px-3 rounded-pill font-weight-normal text-white">Featured</div>
                                 </div>
                             </div>
@@ -212,25 +212,24 @@ const Marketplace = () => {
                 <div className="py-5 text-right"><a href="#!!" className="btn btn-dark px-5 py-3 text-uppercase">Show me more</a></div>
             </div>
             <Modal
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                >
-                    <Box sx={style}>
-                        <Typography id="modal-modal-title" variant="h6" component="h2">
-                            {nftName}
-                        </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                        {nftName}
+                    </Typography>
+                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                         <div className="bg-white rounded shadow-sm"><img src={nftImage} alt="IPFS Img" className="img-fluid card-img-top" />
                         </div>
-                        to: {address}<br/>
-                        <Button onClick={()=>{makeTransaction()}} variant="contained" color="primary">{nftAmount} <img style={{width:"15%", height:"15%"}} src="/img/Logo/token.png" alt="PLAY token"/> <br/>
+                        to: {address}<br />
+                        <Button variant="contained" color="warning" >Marketplace is closed right now.
                         </Button>
-                        {message}
-                        </Typography>
-                    </Box>
-                </Modal>
+                    </Typography>
+                </Box>
+            </Modal>
         </div>
     )
 }

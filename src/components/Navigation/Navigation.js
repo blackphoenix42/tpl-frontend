@@ -23,7 +23,7 @@ const Navigation = () => {
         <div className="navigation" >
 
             <div className="logo" >
-                <img src="/img/Logo/black_bg.png" alt="" />
+                <img src="https://raw.githubusercontent.com/blackphoenix42/tpl-frontend/master/public/img/Logo/black_bg.png" alt="" />
             </div>
 
             <div className="menu">

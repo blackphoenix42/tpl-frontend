@@ -10,6 +10,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 require('request');
 
 const style = {
@@ -35,8 +36,10 @@ const Temple = () => {
     const [accBal, setAccBal] = useState(0)
     const tezos = new TezosToolkit('https://florencenet.api.tez.ie');
     const [PLAYtoken, setTokBal] = useState(0);
-    const [currBlock, setBlock] = useState(564846);
+    const [currBlock, setBlock] = useState(566100);
     const [loading, isLoading] = useState(0);
+    const [amount, setAmount] = useState();
+
     tezos.tz
         .getBalance(localStorage.getItem('userAddress'))
         .then((balance) => setAccBal(`${balance.toNumber() / 1000000}`))
@@ -93,7 +96,7 @@ const Temple = () => {
             setMessage("Getting Tokens ...")
             Tezos.wallet
                 .at('KT1HnJ8RrPLKkRXzkxDfYXD28RgsC2n63BcR')
-                .then((contract) => contract.methods.mint(userAddress, 10).send({ amount: 1, mutez: false }))
+                .then((contract) => contract.methods.mint(userAddress, amount).send({ amount: (amount * 20000), mutez: true }))
                 .then((op) => {
                     setMessage("Waiting for Confirmation ... ")
                     console.log(`Hash: ${op.opHash}`);
@@ -154,6 +157,16 @@ const Temple = () => {
 
     }
 
+    const onChangeHandler = (event) => {
+        const { name, value } = event.currentTarget;
+
+        if (name === 'amount') {
+            setAmount(value);
+            
+        }
+        console.log(amount);
+    };
+
     return (
         <div className="profileCard">
             {
@@ -207,9 +220,11 @@ const Temple = () => {
                                 </a>
                                 <a target="_blank" href="img/nft/8.svg">
                                     <img src="img/nft/8.svg" alt="" />
-                                </a>
-                                <input type="number" placeholder="Number of Tokens" />
-                                {(!loading) ? <Button variant="contained" color="warning" size="medium" onClick={() => { getTokenBalance() }}>Get tokens</Button> : <CircularProgress />}
+                                </a> <br/>
+                                <input id="standard-basic" label="Number of Tokens" variant="standard" type="number" required
+                                    value={amount} name="amount" onChange={(event) => { onChangeHandler(event) }}
+                                /> &nbsp;&nbsp;&nbsp;
+                                {(!loading) ? <Button variant="contained" size="large" onClick={() => { getTokenBalance() }}>Get tokens</Button> : <CircularProgress />}
                                 <br />
                                 <Modal
                                     open={open}

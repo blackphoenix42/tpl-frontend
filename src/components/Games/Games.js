@@ -8,7 +8,7 @@ const Games = () => {
 
     return (
         <div className="GamesComp">
-            <p id="tagline" style={{ marginTop: "7%" }}>PLAY AND WIN!!</p>
+            <p id="tagline" style={{ marginTop: "7%" }}>PLAY TO WIN!!</p> <br/><br/><br/><br/>
 
             <div id="carouselExampleIndicators" className="carousel slide w-50" data-ride="carousel" style={{ display: 'block', marginRight: 'auto', marginLeft: 'auto' }}>
                 <ol className="carousel-indicators">

@@ -7,7 +7,7 @@ import Navigation from '../Navigation/Navigation'
 
 const Main = () => {
     return (
-        <div>
+        <div className="mainComp">
             <div className="navigation">
                 <Navigation />
             </div>
@@ -18,7 +18,9 @@ const Main = () => {
             <div className="Games" id="games">
                 <Games />
             </div>
+            <div className="marketplace" id="marketplace">
 
+            </div>
             <div className="marketplace" id="marketplace">
                 <Marketplace />
             </div>

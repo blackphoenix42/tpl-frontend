@@ -60,10 +60,10 @@
   color: white;
   text-align: center;
   font-size: 15px;
-  padding: 1px 4px;
+  padding: 8px 3px;
   cursor: pointer;
-  float: right;
-}
+  /* float: right;  */
+} 
 
 .ipfs button:hover {
   opacity: 0.8;

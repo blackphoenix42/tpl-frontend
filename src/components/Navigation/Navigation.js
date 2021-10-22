@@ -53,7 +53,7 @@ const Navigation = () => {
                 <Profile />
             </div>
 
-        </div >
+        </div>
     )
 }
 
